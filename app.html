@@ -3,7 +3,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
@@ -252,7 +251,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
       try {
         {const providers = {};
 providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:p4-@elevi de serviciu.sb3");
-providers.ws = new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@elevi de serviciu.sb3");
+providers.ws = new Scaffolding.Cloud.WebSocketProvider("ws://serveo.net:37475", "p4-@elevi de serviciu.sb3");
 for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
 scaffolding.addCloudProviderOverride("☁ .bg", providers["local"] || null);
 scaffolding.addCloudProviderOverride("☁ data", providers["ws"] || null);
